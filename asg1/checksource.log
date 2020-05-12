@@ -1,0 +1,7 @@
+checksource: README: No such file or directory
+checksource: improper character \x0D = ^M (carriage return)
+   file "Makefile": 64 errors: lines 1--64
+   file "bigint.h": 41 errors: lines 1--41
+checksource: missing newline at end of line
+   file "iterstack.h": 1 errors: line 46
+checksource: TOTAL COMPLAINTS: 107

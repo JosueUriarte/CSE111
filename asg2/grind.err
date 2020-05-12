@@ -1,0 +1,39 @@
+==15214== Memcheck, a memory error detector
+==15214== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==15214== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==15214== Command: ./yshell
+==15214== 
+yshell: Bad: no such function
+yshell: not implemented
+yshell: not implemented
+yshell: not implemented
+yshell: not implemented
+yshell: not implemented
+yshell: not implemented
+==15214== 
+==15214== HEAP SUMMARY:
+==15214==     in use at exit: 277 bytes in 6 blocks
+==15214==   total heap usage: 224 allocs, 218 frees, 8,380 bytes allocated
+==15214== 
+==15214== 277 (40 direct, 237 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+==15214==    at 0x4C2A483: operator new(unsigned long) (vg_replace_malloc.c:344)
+==15214==    by 0x411DF9: __gnu_cxx::new_allocator<std::_Sp_counted_ptr_inplace<inode, std::allocator<inode>, (__gnu_cxx::_Lock_policy)2> >::allocate(unsigned long, void const*) (new_allocator.h:111)
+==15214==    by 0x41185E: std::allocator_traits<std::allocator<std::_Sp_counted_ptr_inplace<inode, std::allocator<inode>, (__gnu_cxx::_Lock_policy)2> > >::allocate(std::allocator<std::_Sp_counted_ptr_inplace<inode, std::allocator<inode>, (__gnu_cxx::_Lock_policy)2> >&, unsigned long) (alloc_traits.h:436)
+==15214==    by 0x410CA3: std::__allocated_ptr<std::allocator<std::_Sp_counted_ptr_inplace<inode, std::allocator<inode>, (__gnu_cxx::_Lock_policy)2> > > std::__allocate_guarded<std::allocator<std::_Sp_counted_ptr_inplace<inode, std::allocator<inode>, (__gnu_cxx::_Lock_policy)2> > >(std::allocator<std::_Sp_counted_ptr_inplace<inode, std::allocator<inode>, (__gnu_cxx::_Lock_policy)2> >&) (allocated_ptr.h:97)
+==15214==    by 0x4102F8: std::__shared_count<(__gnu_cxx::_Lock_policy)2>::__shared_count<inode, std::allocator<inode>, file_type>(inode*&, std::_Sp_alloc_shared_tag<std::allocator<inode> >, file_type&&) (shared_ptr_base.h:675)
+==15214==    by 0x40F523: std::__shared_ptr<inode, (__gnu_cxx::_Lock_policy)2>::__shared_ptr<std::allocator<inode>, file_type>(std::_Sp_alloc_shared_tag<std::allocator<inode> >, file_type&&) (shared_ptr_base.h:1342)
+==15214==    by 0x40E402: std::shared_ptr<inode>::shared_ptr<std::allocator<inode>, file_type>(std::_Sp_alloc_shared_tag<std::allocator<inode> >, file_type&&) (shared_ptr.h:359)
+==15214==    by 0x40D43C: std::shared_ptr<inode> std::allocate_shared<inode, std::allocator<inode>, file_type>(std::allocator<inode> const&, file_type&&) (shared_ptr.h:706)
+==15214==    by 0x40C900: std::shared_ptr<inode> std::make_shared<inode, file_type>(file_type&&) (shared_ptr.h:722)
+==15214==    by 0x40AD99: inode_state::inode_state() (file_sys.cpp:33)
+==15214==    by 0x414C4E: main (main.cpp:50)
+==15214== 
+==15214== LEAK SUMMARY:
+==15214==    definitely lost: 40 bytes in 1 blocks
+==15214==    indirectly lost: 237 bytes in 5 blocks
+==15214==      possibly lost: 0 bytes in 0 blocks
+==15214==    still reachable: 0 bytes in 0 blocks
+==15214==         suppressed: 0 bytes in 0 blocks
+==15214== 
+==15214== For counts of detected and suppressed errors, rerun with: -v
+==15214== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
